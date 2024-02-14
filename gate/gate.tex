@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\title{ signals and systems
+\vspace{1cm}
+
+Gate2023-ee-Q46}
+\author{EE23BTECH11014- Devarakonda Guna vaishnavi}
+
+\begin{document}
+\maketitle
+
+Consider the state-space description of an LTI system with matrices
+\[ 
+A = \begin{bmatrix} 0 & 1 \\ -1 & -2 \end{bmatrix}, \quad 
+B = \begin{bmatrix} 0 \\ 1 \end{bmatrix}, \quad 
+C = \begin{bmatrix} 3 & -2 \end{bmatrix}, \quad 
+D = 1 
+\]
+
+For the input, $\sin(\omega t)$, $\omega > 0$, the value of $\omega$ for which the steady-state output of the system will be zero, is \underline{\hspace{2cm}} (Round off to the nearest integer).
+
+solution:
+\vspace{1cm}
+
+A = \begin{bmatrix} 
+0 & 1 \\ -1 & -2 
+\end{bmatrix}
+B = \begin{bmatrix}
+0 \\ 1 
+\end{bmatrix}
+C= \begin{bmatrix} 3 & -2 \\ \end{bmatrix}
+D= \begin{bmatrix} 1 \\  \end{bmatrix}
+\vspace{1cm}
+
+transfer function given by 
+T.F = C(sI - A)^{-1}B + D
+\vspace{1cm}
+
+
+
+
+
+\begin{bmatrix} sI-A  \\    \end{bmatrix}= \begin{bmatrix}s & -1 \\ 1  & s+2 \end{bmatrix}
+\begin{bmatrix} sI - A \\   \end{bmatrix}^{-1}=\begin{bmatrix}s & -1 \\ 1  & s+2 \end{bmatrix}^{-1}
+\vspace{1cm}
+
+
+
+
+
+\begin{bmatrix} sI - A \\   \end{bmatrix}^{-1}=\frac{1}{s(s+2)+1}\begin{bmatrix} s+2 & 1 \\ -1 & s \end{bmatrix}\begin{bmatrix} 0 \\ 1 \end{bmatrix}
+\vspace{1cm}
+
+
+
+T.F=\begin{bmatrix} 3/s^2+2s+1 & -2/s^2+2s+1  \\  \end{bmatrix}  
+\begin{bmatrix} s+2 & 1 \\ -1 & s \end{bmatrix}\begin{bmatrix} 0 \\ 1 \end{bmatrix} +1
+
+\vspace{1cm}
+T.F=\begin{bmatrix} 3/s^2+2s+1 & -2/s^2+2s+1  \\ \end{bmatrix}\begin{bmatrix}
+0 \\ 1 \end{bmatrix}+1
+\vspace{1cm}
+
+
+T.F={s^2 + 4}* 1/{s^2 + 2s + 1}\\
+
+\vspace{1cm}
+H(S)=T.F={s^2 + 4}*(\frac{1}{s^2+2s+1}\))
+\vspace{1cm}
+
+s=j\omega
+
+\vspace{1cm}
+H(j\omega)={4-(\omega)^2}*(\frac{1}{1+2j\omega-(\omega)^2})
+\vspace{1cm}
+
+
+Steady state output of system is zero
+\vspace{1cm}
+
+4-(\omega)^2=0
+\vspace{1cm}
+
+\omega=2rad/sec
+
+
+
+    
+
+\end{document}
+
+
+
+
