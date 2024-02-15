@@ -1,0 +1,162 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[a4,12pt,onecolumn]{IEEEtran}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide}
+\usepackage{listings}
+\usepackage{circuitikz}
+\usepackage{gvv}
+\begin{document}
+\title{ signals and systems
+\vspace{1cm}
+
+Gate2023-ee-Q46}
+\author{EE23BTECH11014- Devarakonda Guna vaishnavi}
+\maketitle
+\textbf{Question:}
+
+Consider the state-space description of an LTI system with matrices
+\begin{align}
+
+A = \begin{pmatrix} \myvec{0} & \myvec{1} \\ \myvec{-1} & \myvec{-2}\end{pmatrix}, \quad 
+B = \begin{pmatrix} \myvec{0} \\ \myvec{1} \end{pmatrix}, \quad 
+C = \begin{pmatrix} \myvec{3} & \myvec{-2} \end{pmatrix}, \quad 
+D = \begin{pmatrix} \myvec{1} \end{pmatrix}
+\end{align}
+
+For the input, $\sin(\omega t)$, $\omega > 0$, the value of $\omega$ for which the steady-state output of the system will be zero, is \underline{\hspace{2cm}} (Round off to the nearest integer).
+
+solution:
+\vspace{1cm}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Input Parameters}
+    \label{tab:parameters}
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Parameter} & \textbf{Value} \\
+    \hline
+    System Matrix, \(A\) & \(
+    \begin{pmatrix}
+    0 & 1 \\
+    -1 & -2 \\
+    \end{pmatrix}
+    \) \\
+    Input Matrix, \(B\) & \(
+    \begin{pmatrix}
+    0 \\
+    1 \\
+    \end{pmatrix}
+    \) \\
+    Output Matrix, \(C\) & \(
+    \begin{pmatrix}
+    3 & -2 \\
+    \end{pmatrix}
+    \) \\
+    Feedthrough Matrix, \(D\) & \(1\) \\
+    Input Signal, \(u(t)\) & \( \sin(\omega t) \), \( \omega > 0 \) \\
+    \hline
+    \end{tabular}
+\end{table}
+
+
+\vspace{2cm}
+
+A = \begin{pmatrix} 
+\myvec{0}& \myvec{1} \\ \myvec{-1} & \myvec{-2} 
+\end{pmatrix}
+B = \begin{pmatrix}
+\myvec{0} \\ \myvec{1} 
+\end{pmatrix}
+C= \begin{pmatrix} \myvec{3} & \myvec{-2}\\ \end{pmatrix}
+D= \begin{pmatrix} \myvec{1} \\  \end{pmatrix}
+\vspace{1cm}
+
+transfer function given by
+\begin{align}
+T.F = C(sI - A)^{-1}B + D
+\end{align}
+\vspace{1cm}
+
+
+
+
+\begin{align}
+\begin{pmatrix} \myvec{sI-A}  \\    \end{pmatrix}= \begin{pmatrix}\myvec{s} & \myvec{-1} \\ \myvec{1}  & \myvec{s+2}\end{pmatrix}
+\begin{pmatrix} \myvec{sI - A }\\   \end{pmatrix}^{-1}=\begin{pmatrix}s & \myvec{-1}\\ \myvec{1} & \myvec{s+2} \end{pmatrix}^{-1}
+\end{align}
+
+\vspace{1cm}
+
+
+
+\begin{align}
+\begin{pmatrix} \myvec{sI - A} \\   \end{pmatrix}^{-1}=\frac{1}{s(s+2)+1}\begin{pmatrix} \myvec{s+2} & \myvec{1} \\ \myvec{-1} & \myvec{s}\end{pmatrix}\begin{pmatrix} \myvec{0} \\ \myvec{1} \end{pmatrix}
+\end{align}
+\vspace{1cm}
+
+ from equation 3
+
+\begin{align}
+T.F=\begin{pmatrix} \myvec{3/s^2+2s+1} & \myvec{-2/s^2+2s+1} \\  \end{pmatrix}  
+\begin{pmatrix} \myvec{s+2} & \myvec{1} \\ \myvec{-1} & \myvec{s}\end{pmatrix}\begin{pmatrix} \myvec{0}\\ \myvec{1} \end{pmatrix} +1
+\end{align}  
+
+solving equation 4 results
+
+\vspace{1cm}
+\begin{align}
+T.F=\begin{pmatrix} \myvec(3/s^2+2s+1) & \myvec(-2/s^2+2s+1)  \\ \end{pmatrix}\begin{pmatrix}
+\myvec{0}\\ \myvec{1} \end{pmatrix}+1
+\end{align}
+\vspace{1cm}
+
+\begin{align}
+T.F={s^2 + 4}*( 1/{s^2 + 2s + 1})\
+\end{align}
+
+\begin{align}
+H(S)=T.F={s^2 + 4}*(\frac{1}{s^2+2s+1})
+\end{align}
+\vspace{3cm}
+
+s=j\omega
+\vspace{1cm}
+
+substitute s=j\omega
+  
+
+\vspace{1cm}
+\begin{align}
+H(j\omega)={4-(\omega)^2}*(\frac{1}{1+2j\omega-(\omega)^2})
+\end{align}
+\vspace{1cm}
+
+
+Steady state output of system is zero
+
+\begin{align}
+4-(\omega)^2=0
+\end{align}
+from equation 9
+
+
+\omega=2rad/sec
+\end{document}
+
+
+
+
+
+
