@@ -1,38 +1,26 @@
-\let\negmedspace\undefined
-\let\negthickspace\undefined
-\documentclass[a4,12pt,onecolumn]{IEEEtran}
-\usepackage{amsmath,amssymb,amsfonts,amsthm}
-\usepackage{algorithmic}
+\documentclass[12pt]{article}
+\usepackage{amsmath}
 \usepackage{graphicx}
-\usepackage{textcomp}
-\usepackage{xcolor}
-\usepackage{txfonts}
-\usepackage{listings}
-\usepackage{enumitem}
-\usepackage{mathtools}
-\usepackage{gensymb}
-\usepackage[breaklinks=true]{hyperref}
-\usepackage{tkz-euclide}
-\usepackage{listings}
-\usepackage{circuitikz}
-\usepackage{gvv}
-\begin{document}
+
 \title{ signals and systems
 \vspace{1cm}
 
 Gate2023-ee-Q46}
 \author{EE23BTECH11014- Devarakonda Guna vaishnavi}
+
+\begin{document}
 \maketitle
-\textbf{Question:}
 
 Consider the state-space description of an LTI system with matrices
 \begin{align}
+    
+\[ 
+A = \begin{bmatrix} \myvec 0 & 1\\ \-1 & -2\end{bmatrix}, \quad 
+B = \begin{bmatrix} \myvec0 \\ 1 \end{bmatrix}, \quad 
+C = \begin{bmatrix} \myvec 3 & -2 \end{bmatrix}, \quad 
+D = \begin{bmatrix} \myvec1 \end{bmatrix}
+\]
 
-A = \begin{pmatrix} \myvec{0} & \myvec{1} \\ \myvec{-1} & \myvec{-2}\end{pmatrix}, \quad 
-B = \begin{pmatrix} \myvec{0} \\ \myvec{1} \end{pmatrix}, \quad 
-C = \begin{pmatrix} \myvec{3} & \myvec{-2} \end{pmatrix}, \quad 
-D = \begin{pmatrix} \myvec{1} \end{pmatrix}
-\end{align}
 
 For the input, $\sin(\omega t)$, $\omega > 0$, the value of $\omega$ for which the steady-state output of the system will be zero, is \underline{\hspace{2cm}} (Round off to the nearest integer).
 
@@ -48,21 +36,21 @@ solution:
     \textbf{Parameter} & \textbf{Value} \\
     \hline
     System Matrix, \(A\) & \(
-    \begin{pmatrix}
-    0 & 1 \\
+    \begin{bmatrix}
+    \myvec0 & 1 \\
     -1 & -2 \\
-    \end{pmatrix}
+    \end{bmatrix}
     \) \\
     Input Matrix, \(B\) & \(
-    \begin{pmatrix}
-    0 \\
+    \begin{bmatrix}
+    \myvec0 \\
     1 \\
-    \end{pmatrix}
+    \end{bmatrix}
     \) \\
     Output Matrix, \(C\) & \(
-    \begin{pmatrix}
-    3 & -2 \\
-    \end{pmatrix}
+    \begin{bmatrix}
+    \myvec3 & -2 \\
+    \end{bmatrix}
     \) \\
     Feedthrough Matrix, \(D\) & \(1\) \\
     Input Signal, \(u(t)\) & \( \sin(\omega t) \), \( \omega > 0 \) \\
@@ -73,19 +61,19 @@ solution:
 
 \vspace{2cm}
 
-A = \begin{pmatrix} 
-\myvec{0}& \myvec{1} \\ \myvec{-1} & \myvec{-2} 
-\end{pmatrix}
-B = \begin{pmatrix}
-\myvec{0} \\ \myvec{1} 
-\end{pmatrix}
-C= \begin{pmatrix} \myvec{3} & \myvec{-2}\\ \end{pmatrix}
-D= \begin{pmatrix} \myvec{1} \\  \end{pmatrix}
+A = \begin{bmatrix} 
+\myvec0& 1 \\ \-1 & -2
+\end{bmatrix}
+B = \begin{bmatrix}
+\myvec0 \\ 1 
+\end{bmatrix}
+C= \begin{bmatrix} \myvec 3 & -2 \\ \end{bmatrix}
+D= \begin{bmatrix} \myvec1 \\  \end{bmatrix}
 \vspace{1cm}
 
 transfer function given by
 \begin{align}
-T.F = C(sI - A)^{-1}B + D
+T.F = C\begin{bmatrix} \myvec sI-A  \\    \end{bmatrix}^{-1}B + D
 \end{align}
 \vspace{1cm}
 
@@ -93,8 +81,8 @@ T.F = C(sI - A)^{-1}B + D
 
 
 \begin{align}
-\begin{pmatrix} \myvec{sI-A}  \\    \end{pmatrix}= \begin{pmatrix}\myvec{s} & \myvec{-1} \\ \myvec{1}  & \myvec{s+2}\end{pmatrix}
-\begin{pmatrix} \myvec{sI - A }\\   \end{pmatrix}^{-1}=\begin{pmatrix}s & \myvec{-1}\\ \myvec{1} & \myvec{s+2} \end{pmatrix}^{-1}
+\begin{bmatrix} \myvec sI-A  \\    \end{bmatrix}= \begin{bmatrix}\myvec s & -1 \\ \myvec 1  & s+2 \end{bmatrix}\\
+\begin{bmatrix} \myvec sI - A \\   \end{bmatrix}^{-1}=\begin{bmatrix} s & -1\\ \myvec 1& s+2 \end{bmatrix}^{-1}
 \end{align}
 
 \vspace{1cm}
@@ -102,32 +90,32 @@ T.F = C(sI - A)^{-1}B + D
 
 
 \begin{align}
-\begin{pmatrix} \myvec{sI - A} \\   \end{pmatrix}^{-1}=\frac{1}{s(s+2)+1}\begin{pmatrix} \myvec{s+2} & \myvec{1} \\ \myvec{-1} & \myvec{s}\end{pmatrix}\begin{pmatrix} \myvec{0} \\ \myvec{1} \end{pmatrix}
+\begin{bmatrix} \myvec sI - A \\   \end{bmatrix}^{-1}=\frac{1}{s(s+2)+1}\begin{bmatrix} \myvec s+2 & 1 \\ \myvec -1 & s \end{bmatrix}\begin{bmatrix} \myvec 0 \\ 1  \end{bmatrix}
 \end{align}
 \vspace{1cm}
 
- from equation 3
+ from equation \eqref{3} 
 
 \begin{align}
-T.F=\begin{pmatrix} \myvec{3/s^2+2s+1} & \myvec{-2/s^2+2s+1} \\  \end{pmatrix}  
-\begin{pmatrix} \myvec{s+2} & \myvec{1} \\ \myvec{-1} & \myvec{s}\end{pmatrix}\begin{pmatrix} \myvec{0}\\ \myvec{1} \end{pmatrix} +1
+T.F=\begin{bmatrix} \myvec 3/s^2+2s+1 & -2/s^2+2s+1 \\  \end{bmatrix}  
+\begin{bmatrix} \myvec s+2 & 1 \\  -1 & s \end{bmatrix}\begin{bmatrix} \myvec 0 \\ 1 \end{bmatrix} +1
 \end{align}  
 
-solving equation 4 results
+solving equation \eqref{4} results
 
 \vspace{1cm}
 \begin{align}
-T.F=\begin{pmatrix} \myvec(3/s^2+2s+1) & \myvec(-2/s^2+2s+1)  \\ \end{pmatrix}\begin{pmatrix}
-\myvec{0}\\ \myvec{1} \end{pmatrix}+1
+T.F=\begin{bmatrix} \myvec 3/s^2+2s+1 & -2/s^2+2s+1  \\ \end{bmatrix}\begin{bmatrix}
+\myvec 0\\ 1 \end{bmatrix}+1
 \end{align}
 \vspace{1cm}
 
 \begin{align}
-T.F={s^2 + 4}*( 1/{s^2 + 2s + 1})\
+T.F=\frac{s^2 + 4}{s^2 + 2s + 1}\
 \end{align}
 
 \begin{align}
-H(S)=T.F={s^2 + 4}*(\frac{1}{s^2+2s+1})
+H(S)=T.F=\frac{s^2 + 4}{s^2+2s+1}
 \end{align}
 \vspace{3cm}
 
@@ -139,7 +127,7 @@ substitute s=j\omega
 
 \vspace{1cm}
 \begin{align}
-H(j\omega)={4-(\omega)^2}*(\frac{1}{1+2j\omega-(\omega)^2})
+H(j\omega)=\frac{4-(\omega)^2}{1+2j\omega-(\omega)^2}
 \end{align}
 \vspace{1cm}
 
@@ -149,11 +137,28 @@ Steady state output of system is zero
 \begin{align}
 4-(\omega)^2=0
 \end{align}
-from equation 9
+from equation \eqref{9}
 
 
 \omega=2rad/sec
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}
+
+
+
+
+    
 
 
 
