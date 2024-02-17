@@ -1,0 +1,77 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\newcommand{\myvec}[1]{\begin{matrix} #1 \end{matrix}}
+
+\title{ signals and systems
+\vspace{1cm}
+
+Gate2023-ee-Q46}
+\author{EE23BTECH11014- Devarakonda Guna vaishnavi}
+
+\begin{document}
+\maketitle
+
+Consider the state-space description of an LTI system with matrices
+\begin{align*}
+A = \begin{bmatrix} \myvec 0 & 1\\ \-1 & -2\end{bmatrix}, \quad 
+B = \begin{bmatrix} \myvec0 \\ 1 \end{bmatrix}, \quad 
+C = \begin{bmatrix} \myvec 3 & -2 \end{bmatrix}, \quad 
+D = \begin{bmatrix} \myvec 1 \end{bmatrix}
+\end{align*}
+
+For the input, $\sin(\omega t)$, $\omega > 0$, the value of $\omega$ for which the steady-state output of the system will be zero, is \underline{\hspace{2cm}} (Round off to the nearest integer).\\
+solution:
+\begin{table}[h!]
+    \centering
+    \input{tables/table.tex}
+    \caption{Input Parameters}
+    \label{table:}
+\end{table}
+
+Transfer function given by:
+\begin{align}
+T.F &= C\begin{bmatrix} \myvec sI-A  \\    \end{bmatrix}^{-1}B + D\label{eq:gate46-1}\\
+\begin{bmatrix} \myvec sI-A  \\    \end{bmatrix}&= \begin{bmatrix}\myvec s & -1 \\ \myvec 1  & s+2 \end{bmatrix}\label{eq:gate46-2}\\
+\begin{bmatrix} \myvec sI - A \\   \end{bmatrix}^{-1}&=\begin{bmatrix} s & -1\\ \myvec 1& s+2 \end{bmatrix}^{-1}\label{eq:gate46-3}\\
+\begin{bmatrix} \myvec sI - A \\   \end{bmatrix}^{-1}&=\frac{1}{s(s+2)+1}\begin{bmatrix} \myvec s+2 & 1 \\ \myvec -1 & s \end{bmatrix}\begin{bmatrix} \myvec 0 \\ 1 \label{eq:gate46-4} \end{bmatrix}
+\end{align}
+\vspace{1cm}
+
+ Referencing from equation \eqref{eq:gate46-4}, equation \eqref{eq:gate46-1} becomes 
+
+\begin{align}
+T.F&=\begin{bmatrix} \myvec 3/s^2+2s+1 & -2/s^2+2s+1 \\  \end{bmatrix}  
+\begin{bmatrix} \myvec s+2 & 1 \\  -1 & s \end{bmatrix}\begin{bmatrix} \myvec 0 \\ 1 \end{bmatrix} +1 \\
+&=\begin{bmatrix} \myvec 3/s^2+2s+1 & -2/s^2+2s+1  \\ \end{bmatrix}\begin{bmatrix}
+\myvec 0\\ 1 \end{bmatrix}+1\\
+&=\frac{s^2 + 4}{s^2 + 2s + 1}\\
+H(S)&=T.F\\
+H(S)&=\frac{s^2 + 4}{s^2+2s+1}\label{eq:gate46-8}
+\end{align}
+
+Substituting $s=j\omega$ in equation \eqref{eq:gate46-8}.
+
+\begin{align}
+H(j\omega)=\frac{4-(\omega)^2}{1+2j\omega-(\omega)^2}
+\end{align}
+
+Steady state output of system is zero.
+
+\begin{align}
+4-(\omega)^2&=0\\
+\omega&=2rad/sec
+\end{align}
+
+\end{document}
+
+
+
+
+    
+
+
+
+
+
+
