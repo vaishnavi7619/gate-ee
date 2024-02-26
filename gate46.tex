@@ -16,6 +16,7 @@
 \usepackage{listings}
 \usepackage{circuitikz}
 \usepackage{gvv}
+\newcommand{\mybmat}[1]{\ensuremath{\begin{bmatrix}#1\end{bmatrix}}}
 \title{Signals and Systems - Gate2023-EE-Q46}
 \author{EE23BTECH11014- Devarakonda Guna vaishnavi}
 
@@ -24,7 +25,7 @@
 \textbf{Question}
 Consider the state-space description of an LTI system with matrices
 \begin{align*}
-A =  \myvec{0 & 1 \\ -1 & -2}, B=\myvec {0 \\ 1}, C =\myvec {3 & -2}, D= \myvec{1}.
+A =  \mybmat{0 & 1 \\ -1 & -2}, B=\mybmat {0 \\ 1}, C =\mybmat {3 & -2}, D= \mybmat{1}.
 \end{align*}
 
 For the input, $\sin(\omega t)$, $\omega > 0$, the value of $\omega$ for which the steady-state output of the system will be zero, is \underline{\hspace{2cm}} (Round off to the nearest integer).\\
@@ -38,7 +39,7 @@ For the input, $\sin(\omega t)$, $\omega > 0$, the value of $\omega$ for which t
     \hline
     System Matrix, \(A\) & 
     \(
-    \myvec{
+    \mybmat{
         0 & 1 \\
         -1 & -2
     }
@@ -46,7 +47,7 @@ For the input, $\sin(\omega t)$, $\omega > 0$, the value of $\omega$ for which t
     \hline
     Input Matrix, \(B\) & 
     \(
-    \myvec{
+    \mybmat{
         0 \\
         1
     }
@@ -54,12 +55,12 @@ For the input, $\sin(\omega t)$, $\omega > 0$, the value of $\omega$ for which t
     \hline
     Output Matrix, \(C\) & 
     \(
-    \myvec{
+    \mybmat{
         3 & -2
     }
     \) \\
     \hline
-    Feedthrough Matrix, \(D\) & \( \myvec{
+    Feedthrough Matrix, \(D\) & \( \mybmat{
     1}
     \) \\
     \hline
@@ -76,15 +77,15 @@ y(t) &= Cx(t) + Du(t)
 \end{align}
 Transfer function given by:
 \begin{align}
-T.F &= C\myvec {sI-A}^{-1}B + D \label{eq:gate46-1}\\
-\myvec{sI-A} &= \myvec {s & -1 \\  1  & s+2} \label{eq:gate46-2}\\
-\myvec{sI - A}^{-1} &= \frac{1}{s(s+2)+1} \myvec {s+2 & 1 \\ -1 & s}  \label{eq:gate46-3}
+T.F &= C\mybmat {sI-A}^{-1}B + D \label{eq:gate46-1}\\
+\mybmat{sI-A} &= \mybmat {s & -1 \\  1  & s+2} \label{eq:gate46-2}\\
+\mybmat{sI - A}^{-1} &= \frac{1}{s(s+2)+1} \mybmat {s+2 & 1 \\ -1 & s}  \label{eq:gate46-3}
 \end{align}
 
 Referencing from equation \eqref{eq:gate46-3}, equation \eqref{eq:gate46-1} becomes 
 \begin{align}
-T.F &= \myvec{ \frac{3}{s^2+2s+1} & \frac{-2}{s^2+2s+1} } \myvec {s+2 & 1 \\ -1 & s} \myvec{0 \\ 1} + 1 \\
-&= \myvec{ \frac{3}{s^2+2s+1} & \frac{-2}{s^2+2s+1} }  \myvec{1 \\ s} + 1 \\
+T.F &= \mybmat{ \frac{3}{s^2+2s+1} & \frac{-2}{s^2+2s+1} } \mybmat {s+2 & 1 \\ -1 & s} \mybmat{0 \\ 1} + 1 \\
+&= \mybmat{ \frac{3}{s^2+2s+1} & \frac{-2}{s^2+2s+1} }  \mybmat{1 \\ s} + 1 \\
 &= \frac{s^2 + 4}{s^2 + 2s + 1} \\
 H(s) &= T.F \\
 H(s) &= \frac{s^2 + 4}{s^2+2s+1} \label{eq:gate46-8}
