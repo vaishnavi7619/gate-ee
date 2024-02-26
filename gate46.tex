@@ -1,26 +1,81 @@
-\documentclass[12pt]{article}
-\usepackage{amsmath}
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[a4,12pt,onecolumn]{IEEEtran}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
 \usepackage{graphicx}
-\newcommand{\myvec}[1]{\ensuremath{\begin{bmatrix}#1\end{bmatrix}}}
-\title{Signals and Systems - Gate2023-ee-Q46}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide}
+\usepackage{listings}
+\usepackage{circuitikz}
+\usepackage{gvv}
+\title{Signals and Systems - Gate2023-EE-Q46}
 \author{EE23BTECH11014- Devarakonda Guna vaishnavi}
 
 \begin{document}
 \maketitle
-
+\textbf{Question:}\\
 Consider the state-space description of an LTI system with matrices
 \begin{align*}
-A &=  \myvec{0 & 1 \\ -1 & -2}, B&=\myvec {0 \\ 1}, C &=\myvec {3 & -2}, D&= \myvec{1}.
+A =  \myvec{0 & 1 \\ -1 & -2}, B=\myvec {0 \\ 1}, C =\myvec {3 & -2}, D= \myvec{1}.
 \end{align*}
 
 For the input, $\sin(\omega t)$, $\omega > 0$, the value of $\omega$ for which the steady-state output of the system will be zero, is \underline{\hspace{2cm}} (Round off to the nearest integer).\\
-Solution:
+\hfill(GATE EE 2023)\\
+\solution\\
 \begin{table}[h!]
     \centering
-    \input{tables/table.tex}
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Parameter} & \textbf{Value} \\
+    \hline
+    System Matrix, \(A\) & 
+    \(
+    \myvec{
+        0 & 1 \\
+        -1 & -2
+    }
+    \) \\
+    \hline
+    Input Matrix, \(B\) & 
+    \(
+    \myvec{
+        0 \\
+        1
+    }
+    \) \\
+    \hline
+    Output Matrix, \(C\) & 
+    \(
+    \myvec{
+        3 & -2
+    }
+    \) \\
+    \hline
+    Feedthrough Matrix, \(D\) & \( \myvec{
+    1}
+    \) \\
+    \hline
+    Input Signal, \(u(t)\) & \(\sin(\omega t)\), \(\omega > 0\) \\
+    \hline
+\end{tabular}
     \caption{Input Parameters}
     \label{table:parameters}
 \end{table}
+
+The state-space representation of the system is given by:
+\begin{align}
+\dot{x}(t) &= Ax(t) + Bu(t) \\
+y(t) &= Cx(t) + Du(t)
+\end{align}
+
 
 Transfer function given by:
 \begin{align}
@@ -50,4 +105,3 @@ Steady state output of system is zero:
 \end{align}
 
 \end{document}
-
