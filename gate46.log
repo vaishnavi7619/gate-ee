@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.7)  26 FEB 2024 14:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.7)  26 FEB 2024 15:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1084,13 +1084,13 @@ File: ot1txr.fd 2000/12/15 v3.1
 LaTeX Warning: Unused global option(s):
     [a4].
 
-No file gate46.aux.
+(./gate46.aux)
 \openout1 = `gate46.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 22.
 LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
 22.
-(/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 22.
@@ -1216,6 +1216,8 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 22.
 LaTeX Info: Redefining \pageref on input line 22.
 LaTeX Info: Redefining \nameref on input line 22.
+
+(./gate46.out) (./gate46.out)
 \@outlinefile=\write4
 \openout4 = `gate46.out'.
 
@@ -1248,36 +1250,14 @@ LaTeX Font Info:    Trying to load font information for TS1+txr on input line 2
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
-)
-
-LaTeX Warning: Reference `eq:gate46-3' on page 1 undefined on input line 87.
-
-
-LaTeX Warning: Reference `eq:gate46-1' on page 1 undefined on input line 87.
-
-
-LaTeX Warning: Reference `eq:gate46-8' on page 1 undefined on input line 96.
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./gate46.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `gate46.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `gate46.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./gate46.aux)
+Package rerunfilecheck Info: File `gate46.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 42497 strings out of 478287
- 988383 string characters out of 5849290
- 1501289 words of memory out of 5000000
+ 42503 strings out of 478287
+ 988449 string characters out of 5849290
+ 1501643 words of memory out of 5000000
  60015 multiletter control sequences out of 15000+600000
  539024 words of font info for 171 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
@@ -1290,10 +1270,10 @@ fonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on gate46.pdf (2 pages, 53979 bytes).
+Output written on gate46.pdf (2 pages, 53041 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
+ 81 PDF objects out of 1000 (max. 8388607)
+ 60 compressed objects within 1 object stream
  17 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
